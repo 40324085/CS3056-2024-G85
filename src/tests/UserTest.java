@@ -24,7 +24,7 @@ public class UserTest {
 		
 		//2 Exercise, run the object under test (constructor)
 		User testUser= new User(test_username,test_password,test_first_name,test_last_name,test_mobile_number);
-		System.out.println("Hello World");
+		//System.out.println("Hello World");
 		//3 verify (Assert)
 		//verify username
 		if(testUser.getUsername() == test_username) {
