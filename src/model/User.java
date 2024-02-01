@@ -15,6 +15,16 @@ public class User {
 	private String first_name;
 	private String last_name;
 	private String mobile_number;
+	
+	public String toString() {
+		return username + ", " + password +", " + first_name +", " + last_name +", " + mobile_number;
+	}
+	
+	
+	
+	
+	
+	
 	public String getUsername() {
 		return username;
 	}
