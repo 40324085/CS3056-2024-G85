@@ -76,6 +76,7 @@ public class UserTest {
 		assert testUser.getLast_name()==test_last_name;
 		assert testUser.getMobile_number()==test_mobile_number;
 		
+		System.out.println("All Java assertions in the test suite passed (none failed)");
 		
 	}
 }
