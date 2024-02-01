@@ -59,12 +59,23 @@ public class UserTest {
 			System.out.println(TestUtils.TEXT_COLOR_RED + "TestConstructor-TC4 failed; last name did not match" + TestUtils.TEXT_COLOR_RESET);
 		}
 		//verify mobile number
-		if(testUser.getLast_name() == test_last_name) {
+		if(testUser.getMobile_number() == test_mobile_number) {
 			System.out.println(TestUtils.TEXT_COLOR_GREEN + "TestConstructor-TC4 passed" + TestUtils.TEXT_COLOR_RESET);
 			
 		}
 		else {
 			System.out.println(TestUtils.TEXT_COLOR_RED + "TestConstructor-TC4 failed; last name did not match" + TestUtils.TEXT_COLOR_RESET);
 		}
+		
+		
+		//useing asserts.
+		assert 1==2;
+		assert testUser.getUsername()==test_username;
+		assert testUser.getPassword()==test_password;
+		assert testUser.getFirst_name()==test_first_name;
+		assert testUser.getLast_name()==test_last_name;
+		assert testUser.getMobile_number()==test_mobile_number;
+		
+		
 	}
 }
