@@ -15,7 +15,7 @@ public class Transaction {
 	
 	
 	public String toString() {
-		return account_number + ", " + transaction_amount +", " + transaction_date ;
+		return String.format("%s, %.2f, %s", account_number, transaction_amount, transaction_date);
 	}
 	
 	public String getAccount_number() {

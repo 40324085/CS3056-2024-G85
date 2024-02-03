@@ -15,10 +15,12 @@ public class Account {
 	private String username_of_account_holder;
 	private String account_type; //either "Standard" or "Saving"
 	private Date account_opening_date;
+
 	
 	
 	public String toString() {
-		return account_number + ", " + username_of_account_holder +", " + account_type +", " + account_opening_date;
+		return String.format("%-10s| %-30s| %-10s| %-15s",
+                account_number, username_of_account_holder, account_type, account_opening_date);
 	}
 	
 	public String getAccount_number() {
