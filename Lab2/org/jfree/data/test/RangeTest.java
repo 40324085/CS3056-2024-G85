@@ -24,4 +24,29 @@ public class RangeTest {
 		assertEquals("The central value of -1 and 1 should be 0",0,rangeObjectUnderTest.getCentralValue(),0.00000000001d);
 	}
 
+	@Test
+	public void testGetLengthBothPositiveandNotEqual() {
+		Range r2= new Range(4,9);
+		assertEquals("getLength: Did not return the expected output",5.0,r2.getLength(),0.000000000001d);
+	}
+	
+	@Test
+	public void testGetLengthBothNegativeandEqual() {
+		Range r3= new Range(-99,-99);
+		assertEquals("getLength: Did not return the expected output",0.0,r3.getLength(),0.000000000001d);
+	}
+	
+	@Test
+	public void testGetLengthBothNegativeandNotEqual() {
+		Range r4= new Range(-11,-4);
+		assertEquals("getLength: Did not return the expected output",7.0,r4.getLength(),0.000000000001d);
+	}
+	
+	@Test
+	public void testGetLengthOnePositiveOneNegative() {
+		Range r5= new Range(-5,3);
+		assertEquals("getLength: Did not return the expected output",8.0,r5.getLength(),0.000000000001d);
+	}
+	
+	
 }
