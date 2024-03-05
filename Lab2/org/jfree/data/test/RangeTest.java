@@ -44,7 +44,7 @@ public class RangeTest {
 	
 	
 	@Test
-	public void testconstrainbothbositivedataaboverange() {
+	public void testconstrainbothpositivedataaboverange() {
 		int UpperBound=10;
 		int LowerBound=0;
 		int Data=15;
@@ -55,7 +55,7 @@ public class RangeTest {
 		assertEquals("constrain TC2: Did not return the expected output",ExpectedValue,rangeObjectUnderTest.constrain(Data),0.00000000001d);
 	}
 	@Test
-	public void testconstrainbothbositivedatabelowrange() {
+	public void testconstrainbothpositivedatabelowrange() {
 		int UpperBound=10;
 		int LowerBound=0;
 		int Data=-10;
@@ -66,7 +66,7 @@ public class RangeTest {
 		assertEquals("constrain TC3: Did not return the expected output",ExpectedValue,rangeObjectUnderTest.constrain(Data),0.00000000001d);
 	}	
 	@Test
-	public void testconstrainbothbositivedatainrange() {
+	public void testconstrainbothpositivedatainrange() {
 		int UpperBound=10;
 		int LowerBound=0;
 		int Data=5;
@@ -107,7 +107,7 @@ public class RangeTest {
 		
 		rangeObjectUnderTest = new Range(LowerBound,UpperBound);
 		
-		assertEquals("constrain TC4: Did not return the expected output",ExpectedValue,rangeObjectUnderTest.constrain(Data),0.00000000001d);
+		assertEquals("constrain TC6: Did not return the expected output",ExpectedValue,rangeObjectUnderTest.constrain(Data),0.00000000001d);
 	}
 	@Test
 	public void testconstrainbothnegativedatainrange() {
@@ -118,8 +118,9 @@ public class RangeTest {
 		
 		rangeObjectUnderTest = new Range(LowerBound,UpperBound);
 		
-		assertEquals("constrain TC4: Did not return the expected output",ExpectedValue,rangeObjectUnderTest.constrain(Data),0.00000000001d);
+		assertEquals("constrain TC7: Did not return the expected output",ExpectedValue,rangeObjectUnderTest.constrain(Data),0.00000000001d);
 	}
+	@Test
 	public void testconstrainbothnegativedataaboverange() {
 		int UpperBound=-10;
 		int LowerBound=-100;
@@ -128,8 +129,9 @@ public class RangeTest {
 		
 		rangeObjectUnderTest = new Range(LowerBound,UpperBound);
 		
-		assertEquals("constrain TC4: Did not return the expected output",ExpectedValue,rangeObjectUnderTest.constrain(Data),0.00000000001d);
+		assertEquals("constrain TC8: Did not return the expected output",ExpectedValue,rangeObjectUnderTest.constrain(Data),0.00000000001d);
 	}
+	@Test
 	public void testconstrainbothnegativedatabelowrange() {
 		int UpperBound=-10;
 		int LowerBound=-100;
@@ -138,7 +140,7 @@ public class RangeTest {
 		
 		rangeObjectUnderTest = new Range(LowerBound,UpperBound);
 		
-		assertEquals("constrain TC4: Did not return the expected output",ExpectedValue,rangeObjectUnderTest.constrain(Data),0.00000000001d);
+		assertEquals("constrain TC9: Did not return the expected output",ExpectedValue,rangeObjectUnderTest.constrain(Data),0.00000000001d);
 	}
 	
 	@Test
@@ -400,7 +402,7 @@ public class RangeTest {
 		
 		rangeObjectUnderTest = new Range(LowerBound,UpperBound);
 		
-		assertTrue("intersects TC11: Did not return the expected output",rangeObjectUnderTest.intersects(newLower, newUpper));
+		assertTrue("intersects TC14: Did not return the expected output",rangeObjectUnderTest.intersects(newLower, newUpper));
 	}
 	@Test
 	public void testintersectsBothNegativeNewRangeFullyBelow() {
@@ -411,7 +413,7 @@ public class RangeTest {
 		
 		rangeObjectUnderTest = new Range(LowerBound,UpperBound);
 		
-		assertFalse("intersects TC11: Did not return the expected output",rangeObjectUnderTest.intersects(newLower, newUpper));
+		assertFalse("intersects TC15: Did not return the expected output",rangeObjectUnderTest.intersects(newLower, newUpper));
 	}
 	@Test
 	public void testExpandToIncludeBothPositiveValueInside() {
@@ -525,6 +527,7 @@ public class RangeTest {
 		int newLower=-30;
 		rangeObjectUnderTest = new Range(LowerBound,UpperBound);
 		Range NewRangeObject=Range.expandToInclude(rangeObjectUnderTest, value);
+
 		assertEquals("ExpandToIncludeTC9.1: Did not return the expected Lower",newLower,NewRangeObject.getLowerBound(),0.000000000001d);
 		assertEquals("ExpandToIncludeTC9.2: Did not return the expected Upper",newUpper,NewRangeObject.getUpperBound(),0.000000000001d);
 		
